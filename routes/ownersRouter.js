@@ -9,7 +9,6 @@ router.get("/", (req, res) => {
 if (process.env.NODE_ENV === "development") {
     router.post("/create", async (req, res) => {
         const owners = await ownerModel.find();
-        console.log("owners: ", owners);
         if (owners.length) {
             return res
                 .status(502)
